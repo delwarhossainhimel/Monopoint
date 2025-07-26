@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Available Resources</h2>
+    <div class="resource-grid">
+        {% for resource in resources %}
+        <div class="resource-card">
+            <h3><a href="{{ url_for('resource', filename=resource.filename) }}" target="_blank">{{ resource.name }}</a></h3>
+            <p>{{ resource.description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>{{ filename.replace('.yaml', '').replace('.yml', '') }}</h2>
+    <a href="{{ url_for('index') }}" class="back-link">← Back to all resources</a>
+    
+    <div class="resource-container">
+        {% if data is mapping %}
+            {% for category, items in data.items() %}
+                {% if category.lower() not in ['name', 'description'] %}
+                    <div class="category-section">
+                        <h3>{{ category }}</h3>
+                        {% if items is sequence and not items is string %}
+                            <div class="resource-grid">
+                                {% for item in items %}
+                                    <div class="resource-card">
+                                        {% if item is mapping %}
+                                            {% for key, value in item.items() %}
+                                                <div class="resource-field">
+                                                    <span class="field-name">{{ key }}:</span>
+                                                    <span class="field-value">
+                                                        {% if value is string and (value.startswith('http://') or value.startswith('https://')) %}
+                                                            <a href="{{ value }}" target="_blank">{{ value }}</a>
+                                                        {% else %}
+                                                            {{ value }}
+                                                        {% endif %}
+                                                    </span>
+                                                </div>
+                                            {% endfor %}
+                                        {% else %}
+                                            <div class="resource-field">
+                                                <span class="field-value">{{ item }}</span>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% elif items is mapping %}
+                            <div class="resource-grid">
+                                <div class="resource-card">
+                                    {% for key, value in items.items() %}
+                                        <div class="resource-field">
+                                            <span class="field-name">{{ key }}:</span>
+                                            <span class="field-value">
+                                                {% if value is string and (value.startswith('http://') or value.startswith('https://')) %}
+                                                    <a href="{{ value }}" target="_blank">{{ value }}</a>
+                                                {% else %}
+                                                    {{ value }}
+                                                {% endif %}
+                                            </span>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="resource-grid">
+                                <div class="resource-card">
+                                    <div class="resource-field">
+                                        <span class="field-value">{{ items }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            <p>Invalid resource format.</p>
+        {% endif %}
+    </div>
+{% endblock %}

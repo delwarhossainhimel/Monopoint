@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Add New Resource</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="file">Upload YAML File:</label>
+            <input type="file" name="file" id="file" accept=".yaml,.yml" required>
+        </div>
+        <button type="submit">Upload</button>
+    </form>
+{% endblock %}

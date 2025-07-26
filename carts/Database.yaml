@@ -1,0 +1,23 @@
+name: Database Resources
+description: List of all database servers
+resources:
+  - reason: Development
+    type: MySQL
+    ip: 192.168.20.20
+    port: 3306
+    owner: Dev Team A
+    environment: dev
+    
+  - reason: Staging
+    type: PostgreSQL
+    ip: 192.168.20.21
+    port: 5432
+    owner: QA Team
+    environment: staging
+    
+  - reason: Production
+    type: MongoDB
+    ip: 192.168.20.22
+    port: 27017
+    owner: Ops Team
+    environment: prod

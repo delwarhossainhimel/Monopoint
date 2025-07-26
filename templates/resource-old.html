@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>{{ filename.replace('.yaml', '').replace('.yml', '') }}</h2>
+    <a href="{{ url_for('index') }}" class="back-link">← Back to all resources</a>
+    
+    <div class="resource-details">
+        {% if data is mapping %}
+            {% for category, items in data.items() %}
+                <div class="category">
+                    <h3>{{ category }}</h3>
+                    {% if items is mapping %}
+                        <table>
+                            {% for key, value in items.items() %}
+                            <tr>
+                                <th>{{ key }}</th>
+                                <td>
+                                    {% if value is string and (value.startswith('http://') or value.startswith('https://')) %}
+                                        <a href="{{ value }}" target="_blank">{{ value }}</a>
+                                    {% else %}
+                                        {{ value }}
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    {% elif items is sequence and not items is string %}
+                        <ul>
+                            {% for item in items %}
+                                <li>
+                                    {% if item is mapping %}
+                                        <table>
+                                            {% for key, value in item.items() %}
+                                            <tr>
+                                                <th>{{ key }}</th>
+                                                <td>
+                                                    {% if value is string and (value.startswith('http://') or value.startswith('https://')) %}
+                                                        <a href="{{ value }}" target="_blank">{{ value }}</a>
+                                                    {% else %}
+                                                        {{ value }}
+                                                    {% endif %}
+                                                </td>
+                                            </tr>
+                                            {% endfor %}
+                                        </table>
+                                    {% else %}
+                                        {{ item }}
+                                    {% endif %}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>{{ items }}</p>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Invalid resource format.</p>
+        {% endif %}
+    </div>
+{% endblock %}
