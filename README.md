@@ -106,6 +106,6 @@ This project is licensed under the MIT License. See the LICENSE file for more in
 
 ## Author
 
-Delwar Hossain Himel — [@delwarhossainhimel](https://github.com/delwarhimel](https://github.com/delwarhossainhimel)
+Delwar Hossain Himel — [@delwarhossainhimel](https://github.com/delwarhossainhimel)
 
 ---
