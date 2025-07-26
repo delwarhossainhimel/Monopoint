@@ -1,6 +1,12 @@
 # Monopoint
 
 Monopoint is an open-source Flask web application that visualizes infrastructure metadata such as database servers, monitoring tool URLs, service catalogs, Jenkins build servers, and other critical service endpoints. It reads YAML files from a `carts` directory and presents them in an easy-to-read web dashboard.
+## Screenshots
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/bb39c8cf-358d-4a16-9eca-4216a271cfe5" width="45%" />
+  <img src="https://github.com/user-attachments/assets/e5fd01bc-1c76-4816-9850-577afd2dd280" width="45%" />
+</p>
 
 ## Features
 
