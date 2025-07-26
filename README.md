@@ -33,7 +33,7 @@ You just define them once in YAML and Monopoint displays them categorized by env
 ## Installation
 
 ```bash
-git clone [https://github.com/delwarhossainhimel/monopoint.git](https://github.com/delwarhossainhimel/Monopoint.git)
+git clone https://github.com/delwarhossainhimel/Monopoint.git
 cd Monopoint
 python3 -m venv venv
 source venv/bin/activate
