@@ -34,7 +34,7 @@ You just define them once in YAML and Monopoint displays them categorized by env
 
 ```bash
 git clone https://github.com/delwarhossainhimel/monopoint.git
-cd monopoint
+cd Monopoint
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
