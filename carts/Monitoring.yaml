@@ -3,36 +3,6 @@ description: URLs for various monitoring tools
 resources:
   - reason: Container Monitoring
     type: Dozzle
-    url: http://192.168.20.14:8080
+    url: http://192.168.10.10:8080
     access: Developer
     environment: all
-    
-  - reason: Metrics Dashboard
-    type: Grafana
-    url: http://192.168.20.249:3000
-    access: Admin
-    environment: prod
-    
-  - reason: UpTime
-    type: Uptime Kuma
-    url: http://192.168.20.249:3002
-    access: Developer
-    environment: dev, staging
-
-  - reason: Container Monitoring1
-    type: Dozzle
-    url: http://192.168.20.14:8080
-    access: Developer
-    environment: all
-    
-  - reason: Metrics Dashboard1
-    type: Grafana
-    url: http://192.168.20.249:3000
-    access: Admin
-    environment: prod
-    
-  - reason: UpTime1
-    type: Uptime Kuma
-    url: http://192.168.20.249:3002
-    access: Developer
-    environment: dev, staging
