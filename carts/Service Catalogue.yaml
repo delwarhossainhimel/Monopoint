@@ -3,11 +3,10 @@ description: Service Catalog
 resources:
   - reason: Read Only Service
     type: Excell file
-    url: https://apsissolutionsltd-my.sharepoint.com/:x:/r/personal/jamal_hossain_apsissolutions_com/_layouts/15/Doc.aspx?sourcedoc=%7BEF7D61A3-98BA-4CE1-BCF8-C2703A5240C6%7D&file=SERVICE-CATALOGUE.xlsx&action=default&mobileredirect=true&DefaultItemOpen=1
+    url: https://my.sharepoint.com
     access: Developer
     environment: all
   - reason: To Add your Service
     type: Excell file
-    url: https://apsissolutionsltd-my.sharepoint.com/:x:/r/personal/jamal_hossain_apsissolutions_com/_layouts/15/Doc.aspx?sourcedoc=%7B65DA9293-56AA-4C09-9ECF-D73B58FBC42F%7D&file=USER-INPUT-SERVICE-CATALOUGE.xlsx&action=default&mobileredirect=true
-    access: Developer
+    url: https://my.sharepoint.com
     environment: all
